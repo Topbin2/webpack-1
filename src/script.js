@@ -2,7 +2,6 @@ const { agoraStatesDiscussions } = require("./data.js");
 require("./style.css");
 
 // index.html을 열어서 agoraStatesDiscussions 배열 요소를 확인하세요.
-console.log(agoraStatesDiscussions);
 let data;
 const dataFromLocalStorage = localStorage.getItem("agoraStatesDiscussions");
 if (dataFromLocalStorage) {
@@ -13,7 +12,6 @@ if (dataFromLocalStorage) {
 
 // convertToDiscussion은 아고라 스테이츠 데이터를 DOM으로 바꿔줍니다.
 
-console.log(123123);
 const convertToDiscussion = (obj) => {
   const li = document.createElement("li"); // li 요소 생성
   li.className = "discussion__container"; // 클래스 이름 지정
