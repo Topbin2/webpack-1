@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = {
   mode: "production",
@@ -13,7 +15,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
         exclude: /node_modules/,
       },
     ],
@@ -22,6 +24,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html"),
     }),
+    new MiniCssExtractPlugin(),
   ],
   devServer: {
     // 개발 서버가 dist 폴더를 제공할 수 있도록 설정
@@ -29,5 +32,8 @@ module.exports = {
       directory: path.resolve(__dirname, "dist"),
     },
     port: 8080,
+  },
+  optimization: {
+    minimizer: [new CssMinimizerPlugin()],
   },
 };

@@ -1,4 +1,5 @@
-require('./style.css');
+const { agoraStatesDiscussions } = require("./data.js");
+require("./style.css");
 
 // index.html을 열어서 agoraStatesDiscussions 배열 요소를 확인하세요.
 console.log(agoraStatesDiscussions);

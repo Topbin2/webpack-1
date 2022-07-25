@@ -8,7 +8,7 @@
     "start": "webpack serve --open --mode=development",
     "build": "webpack --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d docs"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,8 @@
     "webpack-dev-server": "^4.9.3"
   },
   "dependencies": {
-    "gh-pages": "^4.0.0"
+    "css-minimizer-webpack-plugin": "^4.0.0",
+    "gh-pages": "^4.0.0",
+    "mini-css-extract-plugin": "^2.6.1"
   }
 }
